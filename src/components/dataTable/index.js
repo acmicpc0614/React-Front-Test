@@ -11,9 +11,10 @@ const DataTable = ({ columns, data }) => {
       className="w-full overflow-auto scrollable-container"
     >
       <thead className="h-12">
-        {headerGroups.map((headerGroup) => (
+        {headerGroups.map((headerGroup, idx) => (
           <tr
             {...headerGroup.getHeaderGroupProps()}
+            key={idx}
             className="bg-[#F6F7F8] h-12"
           >
             {headerGroup.headers.map((column) => (
@@ -33,11 +34,12 @@ const DataTable = ({ columns, data }) => {
           return (
             <tr
               {...row.getRowProps()}
-              className="px-6 py-4 whitespace-nowrap border-b-2 border-b-slate-200 h-12 "
+              key={row.id} // Use a unique identifier for the key
+              className="px-6 py-4 whitespace-nowrap border-b-2 border-b-slate-200 h-12"
             >
               {row.cells.map((cell) => (
                 <td {...cell.getCellProps()} className="text-14 p-2 text-left">
-                  {cell.render("Cell")}
+                  {cell.render("Cell")} {/* Ensure this renders correctly */}
                 </td>
               ))}
             </tr>

@@ -37,9 +37,10 @@ const DiagnosisHistory = () => {
         <StateCharts />
       </div>
       <div className="flex flex-row justify-between gap-5 mt-5">
-        {data.map((item) => (
+        {data.map((item, idx) => (
           <div
             className="h-[242px] rounded-lg  flex-1 flex flex-col p-4"
+            key={idx}
             style={{
               backgroundColor: item.bgcolor,
             }}
