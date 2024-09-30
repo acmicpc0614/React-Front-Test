@@ -21,31 +21,34 @@ const data = [
 
 const StateCharts = () => {
   return (
-    <div className="w-full h-full ">
+    <div className="w-full h-[220px] ">
       <h2 className="text-2xl font-bold mb-4">Blood Pressure</h2>
       <div className="flex flex-row justify-between rounded-lg h-full gap-6">
-        <ResponsiveContainer className="flex-[2] h-full w-full">
+        <ResponsiveContainer className="flex-[2] h-[180px] w-full transform -translate-x-8">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="month" />
             <YAxis domain={[60, 180]} />
-            <Tooltip content={null} /> <Legend />
+            <Tooltip content={null} />
             <Line
               type="monotone"
               dataKey="systolic"
               stroke="#FF69B4"
-              activeDot={{ r: 5 }}
-              dot={{ r: 3 }}
+              strokeWidth={3}
+              activeDot={{ r: 5, fill: "#FF69B4" }}
+              dot={{ r: 3, fill: "#FF69B4" }}
             />
             <Line
               type="monotone"
               dataKey="diastolic"
               stroke="#8884d8"
-              activeDot={{ r: 5 }}
-              dot={{ r: 3 }}
+              strokeWidth={3}
+              activeDot={{ r: 5, fill: "#8884d8" }}
+              dot={{ r: 3, fill: "#8884d8" }}
             />
           </LineChart>
         </ResponsiveContainer>
+
         <div className="flex flex-col flex-1 h-full gap-2">
           <div>
             <span className="inline-block w-3 h-3 bg-[#FF69B4] rounded-full"></span>
