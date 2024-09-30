@@ -30,7 +30,7 @@ const DiagnosisHistory = () => {
 
   return (
     <div className="w-full bg-white rounded-2xl p-4 h-[675px]">
-      <div className="flex text-24 text-test-color-072635 font-bold">
+      <div className="text-24 text-test-color-072635 font-bold">
         Diagnosis History
       </div>
       <div className="mt-10 w-full h-[300px] bg-[#F4F0FE] rounded-lg p-4">
